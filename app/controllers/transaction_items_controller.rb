@@ -11,17 +11,17 @@ def create
    end
 
     def update
-     @transaction_item = TransactionItem.find(params[:location, :date, :metal_type, :weight, :cash])
-     @transaction_item.update(transaction_item: params[:location, :date, :metal_type, :weight, :cash])
+     @transaction_item = TransactionItem.find(params[:location, :fulldate, :metal_type, :weight, :cash])
+     @transaction_item.update(transaction_item: params[:location, :fulldate, :metal_type, :weight, :cash])
      redirect_to user_path(@transaction_item.user)
   end
 
   def edit
-     @transaction_item = TransactionItem.find(params[:location, :date, :metal_type, :weight, :cash])
+     @transaction_item = TransactionItem.find(params[:location, :fulldate, :metal_type, :weight, :cash])
   end
 
   def destroy
-    @transaction_item = TransactionItem.find(params[:location, :date, :metal_type, :weight, :cash])
+    @transaction_item = TransactionItem.find(params[:location, :fulldate, :metal_type, :weight, :cash])
     @user = @transaction_item.user
     if @transaction_item.destroy
       redirect_to user_path(@user)
@@ -29,7 +29,7 @@ def create
   end
  
  def transaction_item_params
-    params.require(:transaction_item).permit(:location, :date, :metal_type, :weight, :cash, :user_id)
+    params.require(:transaction_item).permit(:location, :fulldate, :metal_type, :weight, :cash, :user_id)
   end
 
 

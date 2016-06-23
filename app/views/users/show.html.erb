@@ -2,7 +2,7 @@
 
 <div id="record">
 		<%= form_for @transaction_item, method: :post do |f|%>
-		<%= f.date_select :date %>
+		<%= f.date_select :fulldate %>
 		<%=f.select(:metal_type, type.collect{|typ| [typ, typ]}, placeholder:"Choose Metal Type")%>
 		<%=f.text_field :location, placeholder:"Scrap Yard" %>
 		<%=f.text_field :weight, placeholder:"Weight Collected" %>
@@ -24,7 +24,7 @@
 		
 		<% @user.transaction_items.each do |ti| %>
 		<tr>
-				<td><%= ti.date %></td>
+				<td><%= ti.fulldate %></td>
 				<td><%= ti.metal_type %></td>
 				<td><%= ti.location %></td>
 				<td><%= ti.weight %>LBS</td>
