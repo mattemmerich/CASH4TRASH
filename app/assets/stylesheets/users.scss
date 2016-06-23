@@ -1,0 +1,66 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#record{
+
+  
+  padding-left:1%;
+  padding-top:1%;
+  width:99%;
+  height:45px;
+  background:#ed1f24;
+  text-align: center;
+  display:none;
+
+
+}
+
+
+
+#edit{
+  z-index: 501;
+  color:white;
+  display:none;
+  width:25%;
+  height:350px;
+  background-color:black;
+  // margin-left:37%;
+  top:125px;
+  left:0;
+  border-radius: 5%;
+  text-align: center;
+  position: fixed;
+  font-family: 'Oswald', sans-serif;
+}
+
+.p{
+	padding-left:75%;
+	color:#ED1F24;
+  display:inline-block;
+}
+
+.tbl{
+  font-family: 'Oswald', sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ED1F24;
+  margin:5%;
+
+}
+
+.tbl th{
+  border: 2px solid #ED1F24;
+  color: #b75052;    padding:10px;
+  }
+
+.tbl td{
+  border: 1px dotted #ED1F24;
+  color: #b75052;
+  padding:15px;
+  width:100px;
+
+
+  }
+
+  #table{
+    padding-left:24%;
+  }

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  metal_type: MyString
+  weight: 1.5
+  cash: 1.5
+  transaction_id: 
+
+two:
+  metal_type: MyString
+  weight: 1.5
+  cash: 1.5
+  transaction_id: 

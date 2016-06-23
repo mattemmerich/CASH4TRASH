@@ -1,0 +1,67 @@
+
+
+<div id="record">
+		<%= form_for @transaction_item, method: :post do |f|%>
+		<%= f.date_select :date %>
+		<%=f.select(:metal_type, type.collect{|typ| [typ, typ]}, placeholder:"Choose Metal Type")%>
+		<%=f.text_field :location, placeholder:"Scrap Yard" %>
+		<%=f.text_field :weight, placeholder:"Weight Collected" %>
+		<%=f.text_field :cash, placeholder:"Cash Collected"%>
+		<%= f.hidden_field :user_id, value: current_user.id %>
+		<%=f.submit :Submit %>
+		<%end%>	
+</div>
+
+<div id="table">
+	<table class="tbl">
+		<tr>
+			<th>DATE</th>
+			<th>METAL</th>
+			<th>LOCATION</th>
+			<th>WEIGHT</th>
+			<th>CASH</th>
+		</tr>
+		
+		<% @user.transaction_items.each do |ti| %>
+		<tr>
+				<td><%= ti.date %></td>
+				<td><%= ti.metal_type %></td>
+				<td><%= ti.location %></td>
+				<td><%= ti.weight %>LBS</td>
+				<td>$<%= ti.cash %></td>
+		</tr>
+			<% end %>
+	</table>
+</div>
+
+<div id="edit">
+		<div class ="p"><p>X</p></div>
+		<%= form_for @user, method: :patch do |f|%>
+			<%=f.text_field :f_name, placeholder:"First Name" %>
+			<br>
+			<br>
+			<%=f.text_field :l_name, placeholder:"Last Name" %>
+			<br>
+			<br>
+			<%=f.text_field :b_name, placeholder:"Buisness Name" %>
+			<br>
+			<br>
+			<%=f.email_field :email, placeholder:"Email" %>
+			<br>
+			<br>
+			<%=f.password_field :password, placeholder:" New Password" %>
+			<br>
+			<br>
+			<%= f.password_field :password_confirmation, placeholder:"Confirm New Password" %>
+			<br>
+			<br>
+			<%=f.submit :Save %>
+			<br>
+			<br>
+			<%= button_to("DELETE ACCOUNT", @user, method: "DELETE")%>
+		
+	<%end%>
+
+	
+	
+</div>

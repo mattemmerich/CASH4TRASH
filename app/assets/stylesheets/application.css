@@ -1,0 +1,212 @@
+/*/*//*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+#slide:hover{
+  color:#ed1f24;
+
+}
+#nav {
+  background-color: black;
+  height: 50px;
+}
+
+#nav ul {
+  list-style-type: none;
+  margin-bottom:0;
+  padding: 0;
+  padding-top: 2px;
+  width:50%;
+  overflow: hidden;
+  float: right;
+  margin-top: 0px;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+#nav:hover{
+	color:#ed1f24;
+
+}
+
+#nav ul li {
+  float: right; 
+  padding: 14px 16px;
+}
+
+#nav ul li a {
+	display: inline;
+  color: white;
+  text-decoration: none;
+}
+
+#nav ul li a:hover {
+	color:red;
+}
+
+.nav_link {
+	display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.nav_link:hover {
+	color:#ed1f24;
+  background-color: black;
+}
+
+#nav h3{
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  width: 25%;
+  display:inline-block;
+  padding: 15px;
+  margin-top: 0px;
+
+}
+ #shade {
+  z-index: 500;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#sign{
+  z-index: 501;
+  color:white;
+  display:none;
+  width:25%;
+  height:300px;
+  background-color:black;
+  margin-top:6%;
+  margin-left:37%;
+  border-radius: 5%;
+  text-align: center;
+  position: fixed;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
+
+#log{
+  z-index: 501;
+  color:white;
+  display:none;
+  width:25%;
+  height:200px;
+  background-color:black;
+  margin-top:6%;
+  margin-left:37%;
+  border-radius: 5%;
+  text-align: center;
+  position: fixed;
+  font-family: 'Oswald', sans-serif;
+}
+
+.p{
+	padding-left:75%;
+	color:red;
+}
+
+#crane img{
+  width: 100%;
+  height: auto;
+}
+
+#footer{
+  height:300px;
+  width:100%;
+  background-color:gray; 
+  
+  padding-top:1%;
+  font-family: 'Oswald', sans-serif;
+  display: inline-block;
+  
+  bottom:0; 
+  
+
+}
+
+.img{
+  width:50%;
+  opacity:50%;
+  height:auto;
+  
+  
+}
+
+.research{
+  float: left;
+  clear:left;
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  font-size: 12px;
+
+  
+}
+
+.research:hover{
+  color:red;
+
+}
+
+.locate{
+  float: left;
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  padding-left:8%;
+  font-size:12px;
+}
+
+  .locate:hover{
+    color:red;
+  }
+
+.cash{
+  float: left;
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  padding-left:8%;
+  font-size:12px;
+
+}
+
+.cash:hover{
+  color:red;
+}
+
+
+
+.neon{
+  text-align: center;
+  font-size: 50px;
+  font-family:'Oswald', sans-serif;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px black, 0 0 20px #ed1f24, 0 0 30px #ed1f24, 0 0 40px #ed1f24, 0 0 55px #ed1f24, 0 0 75px #ff0080;
+}
+
+#neon a:hover {
+  color:#ed1f24;
+
+
+
+
