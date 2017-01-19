@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor'
 
-ruby '2.2.6'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
