@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -35,7 +36,7 @@
 <div id="sign">
 			<div class="p"><p>X</p></div>
 		<%= form_for @user do |f|%>
-			<%=f.text_field :f_name, placeholder:"First Name" %>
+			<%=f.text_field :f_name, placeholder:"First Name"  %>
 			<br>
 			<br>
 			<%=f.text_field :l_name, placeholder:"Last Name" %>
@@ -87,8 +88,9 @@
 
 <div id = "footer">
 	<div class="img">
-			<img src="/assets/07.png"></img>
+			<img src="/assets/05.png"></img>
 		</div>
+		<h3 class="tag">DATA COLLECTION AND MARKET PRICES</h3>
 </div>
 
 

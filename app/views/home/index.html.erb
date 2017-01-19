@@ -1,104 +1,98 @@
 
-<div id="bar">
-<p>bconconvenlfvnelrkvnkvnvnovnovbibvifjb</p>
 	
-
-
-	 var aluminium = [<%= @alum_data[0][1] %>, <%= @alum_data[1][1] %>, <%= @alum_data[2][1] %>, <%= @alum_data[3][1] %>, <%= @alum_data[4][1] %>, <%= @alum_data[5][1] %>, <%= @alum_data[6][1] %>, <%= @alum_data[7][1] %>, <%= @alum_data[8][1] %>, <%= @alum_data[9][1] %>, <%= @alum_data[10][1] %>, <%= @alum_data[11][1] %>]
-
-
-	
-
-	console.log(aluminium)
-	gen_chart(aluminium);
-	// gen_chart(copper);
-	function gen_chart(dataArray){
-
-<meta charset="utf-8">
-<style>
-
-.bar {
-  fill: #ed1f34;
-}
-
-.hover{
-	fill:#b75052;
-}
-
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
-<svg class="chart"></svg>
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script>
-
-var margin = {top: 20, right: 30, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-var x = d3.scale.ordinal()
-		.domain(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
-    .rangeRoundBands([0, width], .1);
-
-var y = d3.scale.linear()
-    .range([height, 0]);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
-
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left");
-
-var chart = d3.select(".chart")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-d3.tsv("data.tsv", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.name; }));
-  y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
-  chart.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
-  chart.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
-
-  chart.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.name); })
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); })
-      .attr("width", x.rangeBand());
-});
-
-function type(d) {
-  d.value = +d.value; // coerce to number
-  return d;
-}
-
-</script>
-	
-
+<div id=copper>
+<img src="/assets/10.png">
+<h3>
+<h5>*Previous 12 months of Aluminium scrap cash value per metric ton.</h5>
 </div>
+
+  <script>
+
+//Data from Quandl.com , limited to 12 sets of data.
+  var aluminium = [<%= @alum_data[0][1] %>, <%= @alum_data[1][1] %>, <%= @alum_data[2][1] %>, <%= @alum_data[3][1] %>, <%= @alum_data[4][1] %>, <%= @alum_data[5][1] %>, <%= @alum_data[6][1] %>, <%= @alum_data[7][1] %>, <%= @alum_data[8][1] %>, <%= @alum_data[9][1] %>, <%= @alum_data[10][1] %>, <%= @alum_data[11][1] %>]
+
+  console.log(aluminium);
+    
+    
+//This creates the window the D3 graphics will appear.
+  var margin = {top: 20, right: 40, bottom: 30, left: 6},
+      width = 1100 - margin.left - margin.right,
+      height = 600- margin.top - margin.bottom;
+
+
+  var x = d3.scale.ordinal()
+      .rangeRoundBands([0, width], .1);
+
+  var y = d3.scale.linear()
+      .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(10, "$");
+
+  //Renders bar chart, relys on data above. Once it has the data it computes the maximum ammount dollars the commodity is worth.
+  var svg = d3.select("body").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + .2 +"," + margin.top + ")");
+
+  // It is here that data is parsed and returned. 
+    x.domain(aluminium.map(function(d) { return d; }));
+    y.domain([0, d3.max(aluminium, function(d) { return d; })]);
+  
+
+  //"g" element is used to group SVG(scalable vector graphics) elements together. 
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")
+        .style("font-family", 'Oswald');
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end");
+    //The Star of the Show. Animated Graphics!!!
+    bar=svg.selectAll("#bar")
+        .data(aluminium)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .transition()
+        .duration(2000)
+        .attr("x", function(d,i) { return 89*i })
+        .attr("width", 45)
+        .attr("y", function(d) { return y(d); })
+        .attr("height", function(d){ return height - y(d); })
+        .attr("transform", "translate( 10 , 0)")
+        .attr("fill", "#ed1f24");
+
+    
+   
+
+       
+
+
+
+
+
+
+
+  function type(d) {
+    d.frequency = +d.frequency;
+    return d;
+  	}
+  </script>
+
+

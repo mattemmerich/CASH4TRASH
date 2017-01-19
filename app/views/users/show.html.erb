@@ -4,7 +4,7 @@
 		<%= form_for @transaction_item, method: :post do |f|%>
 		<%= f.date_select :fulldate %>
 		<%=f.select(:metal_type, type.collect{|typ| [typ, typ]}, placeholder:"Choose Metal Type")%>
-		<%=f.text_field :location, placeholder:"Scrap Yard" %>
+		<%=f.text_field :location, placeholder:"Scrap Yard Location" %>
 		<%=f.text_field :weight, placeholder:"Weight Collected" %>
 		<%=f.text_field :cash, placeholder:"Cash Collected"%>
 		<%= f.hidden_field :user_id, value: current_user.id %>

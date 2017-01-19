@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-#slide:hover{
+/*#slide:hover{
   color:#ed1f24;
 
 }
@@ -104,6 +104,8 @@
 
 
 
+
+
 #log{
   z-index: 501;
   color:white;
@@ -132,20 +134,29 @@
 #footer{
   height:300px;
   width:100%;
-  background-color:gray; 
-  
-  padding-top:1%;
+  background-color:black; 
+  padding-top:3%;
   font-family: 'Oswald', sans-serif;
   display: inline-block;
-  
   bottom:0; 
   
 
 }
 
+
+.tag{
+  padding-left:36%;
+  color:white;
+  width:500px;
+}
+
+.tag:hover{
+  color:#ed1f24;
+}
+
 .img img{
-  width:99%;
-  padding-left:1%;
+  
+  padding-left:27%;
   height:auto;
   
   
@@ -163,7 +174,7 @@
 }
 
 .research:hover{
-  color:red;
+  color:#ed1f24;
 
 }
 
@@ -177,7 +188,7 @@
 }
 
   .locate:hover{
-    color:red;
+    color:#ed1f24;
   }
 
 .cash{
@@ -207,6 +218,10 @@
 #neon a:hover {
   color:#ed1f24;
 
+
+}
+
+*/
 
 
 
