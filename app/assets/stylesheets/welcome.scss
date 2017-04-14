@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #crane{
 	height:739px;
-	background-image:url("/assets/metal.gif");
+	// background-image:url("/assets/metal.gif");
+	background-image: asset_url('metal.gif');
 	background-size:100%;
 
 	#logo{

@@ -57,13 +57,13 @@
 			<%=f.submit :SIGN_UP %>
 			<br>
 			<br>
-		
+
 	<%end%>
 </div>
 
 <div id="log">
 		<div class ="p" ><p>X</p></div>
-	<%= form_tag('/login', method: "post") do  %> 
+	<%= form_tag('/login', method: "post") do  %>
 		<%=text_field_tag :email, nil, placeholder:"Email" %>
 		<br>
 		<br>
@@ -77,9 +77,9 @@
 </div>
 
 
-	
 
-	
+
+
 
 
 
@@ -88,11 +88,11 @@
 
 <div id = "footer">
 	<div class="img">
-			<img src="/assets/05.png"></img>
+			<%= image_tag "05.png" %>
+			<!-- <img src="/assets/05.png"></img> -->
 		</div>
 		<h3 class="tag">DATA COLLECTION AND MARKET PRICES</h3>
 </div>
 
 
 </body>
-
